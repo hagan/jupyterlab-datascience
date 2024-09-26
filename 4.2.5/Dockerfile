@@ -68,10 +68,15 @@ RUN python3 -m pip install jupyter-ai && \
     python3 -m pip install langchain_anthropic langchain_openai langchain_nvidia_ai_endpoints langchain_google_genai
 
 # Install Jupyter Lab Proxy extensions (cards in Launcher)
-RUN mamba install -c conda-forge jupyter-server-proxy
+RUN mamba install -c conda-forge jupyter-server-proxy polars ipyleaflet ipywidgets
 
 # Copy in configuration JSON for Jupyter Notebooks
 COPY jupyter_notebook_config.json /opt/conda/etc/jupyter/jupyter_notebook_config.json
+
+# Rebuild the Jupyter Lab with new tools
+RUN jupyter lab build
+
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet
 
 EXPOSE 8888
 

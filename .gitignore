@@ -1,0 +1,15 @@
+# VS Code
+*.code-workspace
+
+## Misc
+.env
+*.local
+*.log
+node_modules/
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+__pycache__/
+*.pyc
+*.class
