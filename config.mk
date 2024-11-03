@@ -9,6 +9,8 @@ GEOSPATIAL_DIR := $(makefile_dir)/geospatial
 GEOSPATIAL_LATEST_DIR := $(GEOSPATIAL_DIR)/latest
 
 DOCKER_USERNAME := hagan
+IRODS_MOUNT_SRC := /mnt/irods
+IRODS_MOUNT_DST := /data-store/iplant/home/franks
 
 LOCAL_HUB ?= localhost:5000
 LOCAL_URI ?= /vice/jupyter

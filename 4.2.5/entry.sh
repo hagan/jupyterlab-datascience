@@ -14,4 +14,8 @@ if [ -d /data-store/iplant/home/$IPLANT_USER/.ssh ]; then
   cp -r /data-store/iplant/home/$IPLANT_USER/.ssh ~/
 fi
 
+if [ ! -z ${IRODSFUSE_ENABLED+x} ]; then
+  echo "Using irodsfs to mounting /data-store locally..."
+fi
+
 exec jupyter lab --no-browser --LabApp.token="" --LabApp.password="" --ip="0.0.0.0" --port=8888
